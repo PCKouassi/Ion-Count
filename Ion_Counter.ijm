@@ -90,7 +90,7 @@ run("Z Project...", "projection=[Max Intensity]");
 close(image_name + " - C=2");
 selectWindow("MAX_"+ image_name + " - C=2");
 run("Enhance Contrast", "saturated=0.35");
-saveAs("Tiff", image_output_folder+ "/MAX_" + File.nameWithoutExtension() + "_blue.tif");
+saveAs("Tiff", image_output_folder+ "/MAX_" + File.nameWithoutExtension() + "_red.tif");
 rename("MAX_"+image_name + " - C=2");
 
 selectWindow(image_name + " - C=1");
@@ -98,7 +98,7 @@ run("Z Project...", "projection=[Max Intensity]");
 close(image_name + " - C=1");
 selectWindow("MAX_"+ image_name + " - C=1");
 run("Enhance Contrast", "saturated=0.35");
-saveAs("Tiff",image_output_folder+ "/MAX_" + File.nameWithoutExtension() + "_red.tif");
+saveAs("Tiff",image_output_folder+ "/MAX_" + File.nameWithoutExtension() + "_blue.tif");
 rename("MAX_"+ image_name + " - C=1");
 
 run("Merge Channels...", "c1="+"[MAX_"+ image_name + " - C=1]" + " c2="+"[MAX_"+ image_name + " - C=0]" +" c3="+"[MAX_"+ image_name + " - C=2]" +" create");
